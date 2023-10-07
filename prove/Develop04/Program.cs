@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         int selectedNumber = 0;
-
+        //this while will run until the user select 4 to quit the program.
         while (selectedNumber != 4)
         {
             Console.WriteLine("Menu options: ");

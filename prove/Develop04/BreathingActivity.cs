@@ -2,11 +2,16 @@ using System.Text;
 
 public class BreathingActivity : Activity
 {
+    //this constructor will set the activity name and the description by inherit some attributes from
+    // the base class "Activity".
     public BreathingActivity(string activityName, string description) : base(activityName, description)
     {
         _activityName = activityName;
         _description = description;
     }
+
+    //the run method is incharged of run the whole breathing activity by displaying some messages and so animations
+    //to the terminal.
     public void Run()
     {
         DisplayStartingMessage();

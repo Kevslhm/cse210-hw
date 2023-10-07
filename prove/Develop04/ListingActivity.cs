@@ -3,12 +3,16 @@ public class ListingActivity : Activity
     private int _count;
     public List<string> _prompts = new List<string>();
 
+
+    //this construtor will set some attributes that were inherit from the base class.
     public ListingActivity(string activityName, string description) : base(activityName, description)
     {
         _activityName = activityName;
         _description = description;
     }
 
+
+    //this methos will read information from a external file in which our listing prompts are stored.
      public void GetPromptFromFile()
     {
         string[] Lines = System.IO.File.ReadAllLines("ListingPrompts.txt");
@@ -20,6 +24,7 @@ public class ListingActivity : Activity
         
     }
 
+    // this method will pick a random prompt from the _prompts list.
     public void GetRandomPrompt()
     {
         Random random = new Random();
@@ -30,6 +35,9 @@ public class ListingActivity : Activity
 
     }
 
+
+    //this list method is here to store the user's responses in a temporal list and then 
+    //couting how many responses the user could list.
     public List<string> GetListFromUser()
     {
         List<string> _userResponses = new List<string>();
@@ -48,6 +56,9 @@ public class ListingActivity : Activity
         return _userResponses;
     }
 
+
+    //this run function will run the whole listing activity by displaying messages, animations, and prompts
+    //to interact with the user.
     public void Run()
     {
         DisplayStartingMessage();
@@ -58,7 +69,7 @@ public class ListingActivity : Activity
         GetPromptFromFile();
         Console.WriteLine();
 
-        Console.WriteLine("List as many responses as you canto the following prompt: ");
+        Console.WriteLine("List as many responses as you can to the following prompt: ");
         GetRandomPrompt();
         Console.Write("You may begin in: ");
         ShowCountDown(5);

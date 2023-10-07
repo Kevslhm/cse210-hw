@@ -11,27 +11,33 @@ public class Activity
         _duration = 30;
     }
 
+    //this construtor will set two of our three attributes.
+    //to manipulate them later on our main program.
     public Activity(string activityName, string description)
     {
         _activityName = activityName;
         _description = description;
     }
-
+    //this method gets the activity's name
     public string GetName()
     {
         return _activityName;
     }
 
+
+    //this method gets the activity's description.
     public string GetDescription()
     {
         return _description;
     }
 
+    //this one gets the duration of our activity.
     public int GetDuration()
     {
         return _duration;
     }
 
+    //this method will display a starting message whenever we call it
     public void DisplayStartingMessage()
     {
         Console.WriteLine($"Welcome to the {_activityName}.");
@@ -42,6 +48,7 @@ public class Activity
         _duration = int.Parse(Console.ReadLine());
     }
 
+    //this one will display a end message whenever we call it.
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done!!!");
@@ -51,6 +58,8 @@ public class Activity
         Console.Clear();
     }
 
+    // the showspinner behavior wiil display on the screen a animation of a spinner.
+    // we can also set the time we want to be on the screen
     public void ShowSpinner(int seconds)
     {
         List<string> animationString = new List<string>();
@@ -85,7 +94,8 @@ public class Activity
 
         Console.WriteLine(" ");
     }
-
+    // this method dislplay a countdown animation to the screen.
+    //we can also set which number we want the countdown to start.
     public void ShowCountDown(int seconds)
     {
         for (int i = seconds; i > 0; i--)
