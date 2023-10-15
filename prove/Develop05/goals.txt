@@ -1,4 +1,4 @@
-60
-SimpleGoal:Running endurance,Run ten Kilometers,20,0,True
-EternalGoal:Morning family prayer,Pray every mornings along my family,0,10
-ChecklistGoal:visit the temple,perform a ordinance when visiting the temple,5,20,3,3
+0
+SimpleGoal:Running endurance,Run ten Kilometers,20,0,false
+EternalGoal:Morning family prayer,Pray every mornings along my family,10,0
+ChecklistGoal:visit the temple,perform a ordinance when visiting the temple,5,20,3,0
