@@ -5,10 +5,10 @@ public class Journal
 
     
     //this AddEntry method will add a Entry object to the _entries list that is above.
-    public void AddEntry(Entry name, Journal journal)
+    public void AddEntry(Entry name)
     {
 
-        journal._entries.Add(name);
+        _entries.Add(name);
     }
 
 

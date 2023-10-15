@@ -51,7 +51,7 @@ class Program
                 entry1._prompt = prompt;
                 entry1._userEntry = answer;
 
-                journal.AddEntry(entry1, journal);
+                journal.AddEntry(entry1);
             }
 
             else if (selectedNum == 2)
