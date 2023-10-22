@@ -1,0 +1,1 @@
+GeneralFunction:y = 3 x + 2

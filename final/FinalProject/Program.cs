@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello FinalProject World!");
+        FunctionManager functionManager = new FunctionManager();
+        functionManager.Run();
+
     }
 }
