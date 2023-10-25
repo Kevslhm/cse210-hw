@@ -6,6 +6,5 @@ class Program
     {
         FunctionManager functionManager = new FunctionManager();
         functionManager.Run();
-
     }
 }

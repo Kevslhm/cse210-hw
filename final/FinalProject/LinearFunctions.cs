@@ -59,7 +59,7 @@ public abstract class LinearFunctions
     }
 
 
-    public abstract void ValueTable(float mValue = 0, float nValue = 0);
+    public abstract void ValueTable(float mValue = 0, float nValue = 0, float aValue = 0, float bValue = 0, float cValue = 0, string operator1 = "", string operator2 = "");
 
     public  abstract void SetFunction(string function);
 

@@ -1,1 +1,1 @@
-GeneralFunction:y = 3 x + 2
+CuadraticFunction:y = 5 x ^ 2 - 3 x - 9

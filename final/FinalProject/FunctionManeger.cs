@@ -8,6 +8,12 @@ public class FunctionManager
     private float _mValue;
     private float _nValue;
 
+    private float _aValue;
+    private float _bValue;
+    private float _cValue;
+    private string _fOperator;
+    private string _sOperator;
+
 
     public void Run()
     {
@@ -28,8 +34,11 @@ public class FunctionManager
             if (_userNumber == 1)
             {
                 Console.Clear();
-                Console.Write("Please type a proporcional function with the following format (y = m x): ");
+                Console.WriteLine("Please type a proporcional function with the following format (y = m x). ");
+                Console.Write("Please leave and empty space between variables, numbers, and operators: ");
                 string lFunction = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine();
                 SaveLinearFunction(_fileName, lFunction, _userNumber);
                 ReadLinearFunction(_fileName);
                 
@@ -39,21 +48,44 @@ public class FunctionManager
             else if (_userNumber == 2)
             {
                 Console.Clear();
-                Console.Write("Please type a General function with the following format (y = m x + n): ");
+                Console.WriteLine("Please type a General function with the following format (y = m x + n). ");
+                Console.Write("Please leave and empty space between variables, numbers, and operators: ");
                 string lFunction = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine();
                 SaveLinearFunction(_fileName, lFunction, _userNumber);
                 ReadLinearFunction(_fileName);
 
                 GeneralFunction generalFunction = new GeneralFunction();
-                generalFunction.ValueTable(_mValue, _nValue);
+                generalFunction.ValueTable(_mValue, _nValue, 0, 0, 0, _fOperator);
             }
             else if (_userNumber == 3)
             {
-                
+                Console.Clear();
+                Console.WriteLine("Please type a Constant function with the following format (y = n). ");
+                Console.Write("Please leave and empty space between variables, numbers, and operators: ");
+                string lFunction = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                SaveLinearFunction(_fileName, lFunction, _userNumber);
+                ReadLinearFunction(_fileName);
+
+                ConstantFunction constantFunction = new ConstantFunction();
+                constantFunction.ValueTable(0, _nValue);
             }
-            else if (+_userNumber == 4)
+            else if (_userNumber == 4) 
             {
-                
+                Console.Clear();
+                Console.WriteLine("Please type a Cuadratic function with the following format (y = a x ^ 2 + b x + c). ");
+                Console.Write("Please leave and empty space between variables, numbers, and operators: ");
+                string lFunction = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                SaveLinearFunction(_fileName, lFunction, _userNumber);
+                ReadLinearFunction(_fileName);
+
+                CuadraticFunction cuadraticFunction = new CuadraticFunction();
+                cuadraticFunction.ValueTable(0, 0, _aValue, _bValue, _cValue, _fOperator, _sOperator);
             }
         }
     }
@@ -76,6 +108,18 @@ public class FunctionManager
                 generalFunction.SetFunction(function);
                 functionWriter.WriteLine(generalFunction.GetFunctionData());
             }
+            else if (userNumber == 3)
+            {
+                ConstantFunction constantFunction = new ConstantFunction();
+                constantFunction.SetFunction(function);
+                functionWriter.WriteLine(constantFunction.GetFunctionData());
+            }
+            else if (userNumber == 4)
+            {
+                CuadraticFunction cuadraticFunction = new CuadraticFunction();
+                cuadraticFunction.SetFunction(function);
+                functionWriter.WriteLine(cuadraticFunction.GetFunctionData());
+            }
             
         }
     }
@@ -96,12 +140,30 @@ public class FunctionManager
             {
                 _mValue = float.Parse(parts[3]);
                 _nValue = float.Parse(parts[6]);
+
+                _fOperator = parts[5];
+            }
+            else if (parts[0] == "CuadraticFunction")
+            {
+                _aValue = float.Parse(parts[3]);
+                _bValue = float.Parse(parts[8]);
+                _cValue = float.Parse(parts[11]);
+
+                _fOperator = parts[7];
+                _sOperator = parts[10];
+            }
+            else if (parts[0] == "ConstantFunction")
+            {
+                _nValue = float.Parse(parts[3]);
             }
             
         }
     }
 
-
+    public void Draw()
+    {
+        
+    }
     /* public void ValueTable()
     {
         List<int> xValues = new List<int>();
